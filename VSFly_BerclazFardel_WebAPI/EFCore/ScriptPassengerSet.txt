@@ -1,0 +1,12 @@
+﻿SET IDENTITY_INSERT [dbo].[PassengerSet] ON
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (1, N'Coline', N'Fardel')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (2, N'Brice', N'Berclaz')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (3, N'Antoine', N'Widmer')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (4, N'David', N'Russo')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (5, N'Alain', N'Duc')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (6, N'Roger', N'Schniedrig')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (7, N'Pascal', N'Clavien')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (8, N'Fernand', N'Masserey')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (9, N'Karen', N'Taramarcaz')
+INSERT INTO [dbo].[PassengerSet] ([PersonID], [Firstname], [Lastname]) VALUES (10, N'Valérie', N'Bétrisey')
+SET IDENTITY_INSERT [dbo].[PassengerSet] OFF

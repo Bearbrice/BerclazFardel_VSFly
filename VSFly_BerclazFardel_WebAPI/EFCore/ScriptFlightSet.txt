@@ -1,0 +1,8 @@
+﻿SET IDENTITY_INSERT [dbo].[FlightSet] ON
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (1, N'SION', N'GENEVE', N'2020-07-27 00:00:00', 200, 50)
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (2, N'GENEVE', N'SION', N'2020-10-10 00:00:00', 199, 65)
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (3, N'ZURICH', N'MILANO MALPENSA', N'2020-10-05 00:00:00', 250, 40)
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (4, N'BASEL MULHOUSE', N'LYON', N'2020-09-09 00:00:00', 150, 20)
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (5, N'BERN', N'SION', N'2020-06-20 00:00:00', 50, 100)
+INSERT INTO [dbo].[FlightSet] ([FlightNo], [Departure], [Destination], [Date], [Seats], [BasePrice]) VALUES (6, N'BRUXELLES', N'PARIS ORLY', N'2020-06-18 00:00:00', 60, 90)
+SET IDENTITY_INSERT [dbo].[FlightSet] OFF
