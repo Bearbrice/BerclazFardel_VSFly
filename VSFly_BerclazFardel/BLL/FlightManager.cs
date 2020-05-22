@@ -16,7 +16,7 @@ namespace BLL
         {
             Httpclient = new HttpClient()
             {
-                BaseAddress = new Uri("http://localhost:64961/api/")
+                BaseAddress = new Uri("https://localhost:44333/api/")
             };
 
         }

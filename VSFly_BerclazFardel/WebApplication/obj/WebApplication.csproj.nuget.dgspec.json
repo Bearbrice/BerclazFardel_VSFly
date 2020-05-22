@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj": {}
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
+              "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
               }
             }
           }
@@ -73,20 +70,17 @@
         }
       }
     },
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -128,20 +122,17 @@
         }
       }
     },
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj": {
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj",
-        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\obj\\",
+        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\WebApplication.csproj",
+        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,11 +145,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj"
+              "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
+              "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
               }
             }
           }

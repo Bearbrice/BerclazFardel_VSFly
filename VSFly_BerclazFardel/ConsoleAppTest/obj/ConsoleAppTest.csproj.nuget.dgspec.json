@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj": {}
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj": {
+    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
+        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
         "projectName": "ConsoleAppTest",
-        "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
-        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\obj\\",
+        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
+        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
