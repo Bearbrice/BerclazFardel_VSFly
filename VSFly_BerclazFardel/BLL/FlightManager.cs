@@ -8,14 +8,17 @@ using DTO;
 
 namespace BLL
 {
-    public class FlightManager
+    public class FlightManager : IFlightManager
     {
         private static readonly HttpClient Httpclient;
 
         static FlightManager()
         {
-            Httpclient = new HttpClient();
-            Httpclient.BaseAddress = new Uri("http://localhost:64961/api/");
+            Httpclient = new HttpClient()
+            {
+                BaseAddress = new Uri("http://localhost:64961/api/")
+            };
+
         }
 
         public static async Task<List<Flight>> GetAllFlightsAsync()
@@ -40,9 +43,9 @@ namespace BLL
 
             foreach (Flight f in flightList)
             {
-                if (idFlight == f.idFlight)
+                if (idFlight == f.FlightNo)
                 {
-                    return f.departure;
+                    return f.Departure;
                 }
             }
 

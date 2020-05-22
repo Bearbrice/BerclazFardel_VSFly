@@ -1,0 +1,4 @@
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\BLL\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs

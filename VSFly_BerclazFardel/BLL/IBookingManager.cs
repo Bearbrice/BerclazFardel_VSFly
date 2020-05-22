@@ -1,10 +1,15 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BLL
 {
-    class IBookingManager
+    interface IBookingManager
     {
+        void AddBooking();
+
+        Booking ShowBookings(Passenger passenger);
+
     }
 }
