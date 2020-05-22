@@ -8,7 +8,7 @@ using DTO;
 
 namespace BLL
 {
-    public class FlightManager : IFlightManager
+    public class FlightManager
     {
         private static readonly HttpClient Httpclient;
 
@@ -31,26 +31,24 @@ namespace BLL
             if (responseTask.IsSuccessStatusCode)
             {
                 flights = await responseTask.Content.ReadAsAsync<List<Flight>>();
-
             }
             return flights;
-
         }
 
-        public static async Task<string> GetFlightDepartureAsync(int idFlight)
-        {
-            List<Flight> flightList = await GetAllFlightsAsync();
+        //public static async Task<string> GetFlightDepartureAsync(int idFlight)
+        //{
+        //    List<Flight> flightList = await GetAllFlightsAsync();
 
-            foreach (Flight f in flightList)
-            {
-                if (idFlight == f.FlightNo)
-                {
-                    return f.Departure;
-                }
-            }
+        //    foreach (Flight f in flightList)
+        //    {
+        //        if (idFlight == f.FlightNo)
+        //        {
+        //            return f.Departure;
+        //        }
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
 
 

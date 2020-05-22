@@ -1,0 +1,9 @@
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\bin\Debug\netcoreapp3.1\DTO.deps.json
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.csprojAssemblyReference.cache
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfo.cs
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.dll
+C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\DTO\obj\Debug\netcoreapp3.1\DTO.pdb

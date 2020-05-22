@@ -14,7 +14,7 @@ namespace DTO
 
         public DateTime Date { get; set; }
 
-        public short? Seats { get; set; }
+        public short Seats { get; set; }
 
         public double BasePrice { get; set; }
     }

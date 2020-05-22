@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BLL
 {
-    public class BookingManager : IBookingManager
+    public class BookingManager
     {
 
     }

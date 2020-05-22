@@ -4,7 +4,6 @@ C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\Co
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\bin\Debug\netcoreapp3.1\ConsoleAppTest.runtimeconfig.dev.json
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\bin\Debug\netcoreapp3.1\ConsoleAppTest.dll
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\bin\Debug\netcoreapp3.1\ConsoleAppTest.pdb
-C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\obj\Debug\netcoreapp3.1\ConsoleAppTest.csprojAssemblyReference.cache
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\obj\Debug\netcoreapp3.1\ConsoleAppTest.csproj.CoreCompileInputs.cache
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\obj\Debug\netcoreapp3.1\ConsoleAppTest.AssemblyInfoInputs.cache
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\ConsoleAppTest\obj\Debug\netcoreapp3.1\ConsoleAppTest.AssemblyInfo.cs
