@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {}
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
         "projectName": "EFCore",
-        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
-        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\obj\\",
+        "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
+        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

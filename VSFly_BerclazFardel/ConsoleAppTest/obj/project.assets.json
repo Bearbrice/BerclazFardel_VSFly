@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Coline\\.nuget\\packages\\": {}
+    "C:\\Users\\brice\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
+      "projectUniqueName": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
       "projectName": "ConsoleAppTest",
-      "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
-      "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\obj\\",
+      "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\ConsoleAppTest.csproj",
+      "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\ConsoleAppTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

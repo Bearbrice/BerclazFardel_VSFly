@@ -16,7 +16,7 @@ namespace BLL
         {
             Httpclient = new HttpClient()
             {
-                BaseAddress = new Uri("https://localhost:44333/api/")
+                BaseAddress = new Uri("http://localhost:51830/api/flight")
             };
 
         }
@@ -26,7 +26,7 @@ namespace BLL
             List<Flight> flights = null;
             //return DAL.HotelDB.GetAllHotel();
             //HTTP GET
-            var responseTask = await Httpclient.GetAsync("flights");
+            var responseTask = await Httpclient.GetAsync("flight");
 
             if (responseTask.IsSuccessStatusCode)
             {

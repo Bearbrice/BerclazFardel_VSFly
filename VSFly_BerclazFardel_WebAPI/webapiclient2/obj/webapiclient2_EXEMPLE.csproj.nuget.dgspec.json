@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj": {}
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
         "projectName": "EFCore",
-        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
-        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\obj\\",
+        "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj",
+        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,17 +79,20 @@
         }
       }
     },
-    "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj": {
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj",
+        "projectUniqueName": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj",
         "projectName": "webapiclient2_EXEMPLE",
-        "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj",
-        "packagesPath": "C:\\Users\\Coline\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\obj\\",
+        "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\webapiclient2_EXEMPLE.csproj",
+        "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\webapiclient2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Coline\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brice\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +105,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
-                "projectPath": "C:\\Users\\Coline\\Source\\Repos\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj"
+              "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj": {
+                "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel_WebAPI\\EFCore\\EFCore.csproj"
               }
             }
           }
@@ -122,9 +128,31 @@
               "target": "Package",
               "version": "[5.2.7, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

@@ -114,3 +114,5 @@ C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\We
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebApplication\bin\Debug\netcoreapp3.1\DTO.dll
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebApplication\bin\Debug\netcoreapp3.1\BLL.pdb
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebApplication\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Flight\GetAllFlights.cshtml.g.cs
+C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Flight\GetFlight.cshtml.g.cs

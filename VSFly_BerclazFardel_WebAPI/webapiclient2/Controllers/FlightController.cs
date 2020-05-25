@@ -7,7 +7,7 @@ namespace webapiclient2_EXEMPLE.Controllers
     [RoutePrefix("api/flights")]
     public class FlightController : ApiController
     {
-        static VSFlightContext context = new VSFlightContext();
+        static VSFlightContext_OFF context = new VSFlightContext_OFF();
 
         [Route("")]
         public IHttpActionResult GetAllFlights()

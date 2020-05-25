@@ -17,7 +17,7 @@ namespace EFCore
 
         private static void CreateDatabase()
         {
-            using (var ctx = new VSFlightContext())
+            using (var ctx = new VSFlightContext_OFF())
             {
                 var e = ctx.Database.EnsureCreated();
 
@@ -30,7 +30,7 @@ namespace EFCore
         {
             Console.WriteLine("------------------------- PRINT FLIGHTS -------------------------------");
 
-            using (var ctx = new VSFlightContext())
+            using (var ctx = new VSFlightContext_OFF())
             {
                 // Needs using System.Linq;
                 var q = from f in ctx.FlightSet
