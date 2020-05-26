@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\VSFly_BerclazFardel"
+    "\\VSFly_BerclazFardel",
+    "\\VSFly_BerclazFardel_WebAPI"
   ],
-  "SelectedNode": "\\VSFly_BerclazFardel\\VSFly_BerclazFardel.sln",
+  "SelectedNode": "\\VSFly_BerclazFardel_WebAPI\\VSFly_BerclazFardel_WebAPI.sln",
   "PreviewInSolutionExplorer": false
 }
