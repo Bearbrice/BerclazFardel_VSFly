@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using WebAppAPIClient.Factory;
 using WebAppAPIClient.Models;
 using WebAppAPIClient.Utility;
+using WebAppAPIClient.ViewModel;
 
 namespace WebAppAPIClient.Controllers
 {
@@ -24,19 +25,30 @@ namespace WebAppAPIClient.Controllers
             _logger = logger;
         }
 
-        // GET: Flight
+        // GET: Flights
         public async Task<ActionResult> GetAllFlights()
         {
-            var data = await ApiClientFactory.Instance.GetAllFlights();
+            var flights = await ApiClientFactory.Instance.GetAllFlights();
             
-            return View(data);
+            return View(flights);
         }
 
-        public async Task<IActionResult> IndexAsync()
+        // GET: Flights
+        public async Task<ActionResult> GetFlight(int id)
         {
-            var data = await ApiClientFactory.Instance.GetTodoItems();
-            return View(data);
+            var flight = await ApiClientFactory.Instance.GetFlight(id);
+
+            FlightBooking fb = new FlightBooking();
+            fb.Flight = flight;
+            
+            return View(flight);
         }
+
+        //public async Task<IActionResult> IndexAsync()
+        //{
+        //    var data = await ApiClientFactory.Instance.GetTodoItems();
+        //    return View(data);
+        //}
 
         public IActionResult Privacy()
         {

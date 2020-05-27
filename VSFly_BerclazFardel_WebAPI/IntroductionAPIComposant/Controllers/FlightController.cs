@@ -23,16 +23,16 @@ namespace IntroductionAPIComposant.Controllers
             _context = context;
         }
 
-        // GET: api/ToDoItems
+        // GET: api/GetAllFlights
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Flight>>> GetAllFlights()
         {
             return await _context.FlightSet.ToListAsync();
         }
 
-        // GET: api/ToDoItems/5
+        // GET: api/GetFlight/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Flight>> GetFlight(long id)
+        public async Task<ActionResult<Flight>> GetFlight(int id)
         {
             var flight = await _context.FlightSet.FindAsync(id);
 

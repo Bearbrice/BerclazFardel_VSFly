@@ -28,5 +28,12 @@ namespace WebAppAPIClient
                 "Flight/"));
             return await GetAsync<List<FlightModel>>(requestUrl);
         }
+
+        public async Task<FlightModel> GetFlight(int id)
+        {
+            var requestUrl = CreateRequestUri(string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                ("Flight/"+id)));
+            return await GetAsync<FlightModel>(requestUrl);
+        }
     }
 }

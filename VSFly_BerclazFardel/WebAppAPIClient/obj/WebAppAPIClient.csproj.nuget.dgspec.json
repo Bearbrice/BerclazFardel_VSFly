@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj": {}
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj": {}
   },
   "projects": {
     "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj": {
+    "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj",
+        "projectUniqueName": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj",
         "projectName": "WebAppAPIClient",
-        "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj",
+        "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\WebAppAPIClient.csproj",
         "packagesPath": "C:\\Users\\brice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\obj\\",
+        "outputPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\WebAppAPIClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -154,11 +154,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj"
+              "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\brice\\source\\repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
+              "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\brice\\Source\\Repos\\Bearbrice\\BerclazFardel_VSFly\\VSFly_BerclazFardel\\DTO\\DTO.csproj"
               }
             }
           }
