@@ -12,7 +12,7 @@ namespace WebAPI
         public DbSet<Passenger> PassengerSet { get; set; }
         public DbSet<Booking> BookingSet { get; set; }
 
-        public static string ConnectionString { get; set; } = @"Server=(localDB)\MSSQLLocalDB;Database=VSFlyDB;Trusted_Connection=True;MultipleActiveResultSets=True;App=EFCore";
+        public static string ConnectionString { get; set; } = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\VSFlyDB.mdf;Integrated Security=True";
 
         // Constructor
         public VSFlightContext() { }

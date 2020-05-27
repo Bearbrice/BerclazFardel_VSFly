@@ -23,10 +23,12 @@ namespace EFCore
         public DateTime Date { get; set; }
 
         [Required]
-        public short? Seats { get; set; }
+        public short? TotalSeats { get; set; }
 
         [Required]
         public double BasePrice { get; set; }
+
+        public short SeatsBooked { get; set; }
 
         public virtual ICollection<Booking> BookingSet { get; set; }
     }

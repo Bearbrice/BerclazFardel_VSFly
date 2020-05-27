@@ -38,7 +38,7 @@ namespace EFCore
 
                 foreach (Flight f in q)
                 {
-                    Console.WriteLine("{0} {1} {2} {3} {4}", f.FlightNo, f.Departure, f.Destination, f.Seats, f.BasePrice);
+                    Console.WriteLine("{0} {1} {2} {3} {4}", f.FlightNo, f.Departure, f.Destination, f.TotalSeats, f.BasePrice);
                 }
             }
         }

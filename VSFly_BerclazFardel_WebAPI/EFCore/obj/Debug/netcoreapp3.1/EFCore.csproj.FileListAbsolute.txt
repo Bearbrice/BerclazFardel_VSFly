@@ -1,5 +1,4 @@
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\bin\Debug\netcoreapp3.1\EFCore.exe
-C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.csprojAssemblyReference.cache
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfoInputs.cache
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.AssemblyInfo.cs
 C:\Users\brice\source\repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
@@ -98,3 +97,4 @@ C:\Users\Coline\Source\Repos\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCo
 C:\Users\Coline\Source\Repos\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.dll
 C:\Users\Coline\Source\Repos\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.pdb
 C:\Users\Coline\Source\Repos\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.genruntimeconfig.cache
+C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.csprojAssemblyReference.cache
