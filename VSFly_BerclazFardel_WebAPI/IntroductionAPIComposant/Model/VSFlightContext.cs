@@ -2,7 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace WebAPI
 {
@@ -15,7 +18,9 @@ namespace WebAPI
         public static string ConnectionString { get; set; } = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\VSFlyDB.mdf;Integrated Security=True";
 
         // Constructor
-        public VSFlightContext() { }
+        public VSFlightContext() {
+        
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {

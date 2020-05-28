@@ -9,6 +9,8 @@ using IntroductionAPIComposant.Model;
 using WebAPI;
 using WebAPI.Model;
 using EFCore;
+using System.Runtime.InteropServices.ComTypes;
+using Microsoft.Extensions.Logging;
 
 namespace IntroductionAPIComposant.Controllers
 {
@@ -23,11 +25,61 @@ namespace IntroductionAPIComposant.Controllers
             _context = context;
         }
 
+        public double CalculSalesPrice(Flight flight)
+        {
+            double basePrice = flight.BasePrice;
+            DateTime flightDate = flight.Date;
+
+            double pourcentage = (double)(flight.SeatsBooked / flight.TotalSeats)*100;
+            
+            DateTime date = DateTime.Now;
+
+            TimeSpan diff = flightDate - date ;
+
+            double diffMonths = diff.TotalDays / 30;
+
+            //1. If the airplane is more than 80 % full regardless of the date:
+            //sale price = 150 % of the base price
+            if (pourcentage > 80) 
+            {
+                return basePrice * 150 / 100;
+            }
+
+            //2. If the plane is filled less than 20 % less than 2 months before departure:
+            //sale price = 80 % of the base price
+            if (pourcentage < 20 && diffMonths < 2 && diffMonths > 1)
+            {
+                return basePrice * 80 / 100;
+            }
+
+            //3. If the plane is filled less than 50 % less than 1 month before departure:
+            //sale price = 70 % of the base price
+            if (pourcentage < 50 && diffMonths < 1)
+            {
+                return basePrice * 70 / 100;
+            }
+
+
+            return basePrice;
+        }
+
+
+
         // GET: api/GetAllFlights
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Flight>>> GetAllFlights()
         {
-            return await _context.FlightSet.ToListAsync();
+            List<Flight> lf = await _context.FlightSet.Where(x => x.SeatsBooked != x.TotalSeats).ToListAsync();
+
+            // Method price
+            foreach (Flight f in lf)
+            {
+                // Calculate for each flight
+                f.BasePrice = CalculSalesPrice(f);
+
+            }
+
+            return lf;
         }
 
         // GET: api/GetFlight/5
