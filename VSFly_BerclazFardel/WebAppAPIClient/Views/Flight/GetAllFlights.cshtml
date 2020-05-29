@@ -7,6 +7,53 @@
 <h1>All flights</h1>
 
 <table class="table">
+    <caption style="text-align:center">
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Show all" />
+        }
+        </caption>
+    <thead>
+        <tr>
+            <th>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by departure:
+                    </p>
+                    @Html.TextBox("SDeparture")
+                    <input type="submit" value="Search" />
+
+                }
+            </th>
+            <th>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by destination:
+                    </p>
+                    @Html.TextBox("SDestination")
+                    <input type="submit" value="Search" />
+
+                }
+            </th>
+            <th>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by date (XX.XX.XXXX):
+                    </p>
+                    @Html.TextBox("SDate")
+                    <input type="submit" value="Search" />
+
+                }
+            </th>
+        </tr>
+    </thead>
+</table>
+
+
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -19,13 +66,15 @@
                 @Html.DisplayNameFor(model => model.Destination)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                @*@Html.DisplayNameFor(model => model.Date)*@
+                @Html.ActionLink("Date", "GetAllFlights", new { sortOrder = ViewBag.DateSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TotalSeats)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BasePrice)
+                @*@Html.DisplayNameFor(model => model.BasePrice)*@
+                @Html.ActionLink("Price", "GetAllFlights", new { sortOrder = ViewBag.PriceSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SeatsBooked)
@@ -34,33 +83,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Departure)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destination)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalSeats)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BasePrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeatsBooked)
-            </td>
-            <td>
-                @Html.ActionLink("Book", "Details", new {  id=item.FlightNo })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalSeats)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BasePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatsBooked)
+                </td>
+                <td>
+                    @Html.ActionLink("Book", "Details", new { id = item.FlightNo })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

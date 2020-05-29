@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -26,11 +28,47 @@ namespace WebAppAPIClient.Controllers
         }
 
         // GET: Flights
-        public async Task<ActionResult> GetAllFlights()
+        public async Task<ActionResult> GetAllFlights(string sortOrder, string sDeparture, string sDestination, string sDate)
         {
             var flights = await ApiClientFactory.Instance.GetAllFlights();
-            
-            return View(flights);
+
+            IEnumerable<FlightModel> fm = flights;
+
+            /*FIND*/
+            if (!String.IsNullOrEmpty(sDeparture))
+            {
+                fm = fm.Where(f => f.Departure.Contains(sDeparture));
+            }
+            if (!String.IsNullOrEmpty(sDestination))
+            {
+                fm = fm.Where(f => f.Destination.Contains(sDestination));
+            }
+            if (!String.IsNullOrEmpty(sDate))
+            {
+                fm = fm.Where(f => f.Date.ToString().Substring(0,10)==sDate);
+            }
+
+            ///*SORT*/
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+
+            switch (sortOrder)
+            {
+                case "price_desc":
+                    fm = fm.OrderByDescending(f => f.BasePrice);
+                    break;
+                case "Price":
+                    fm = fm.OrderBy(f => f.BasePrice);
+                    break;
+                case "Date":
+                    fm = fm.OrderBy(f => f.Date);
+                    break;
+                case "date_desc":
+                    fm = fm.OrderByDescending(f => f.Date);
+                    break;
+            }
+
+            return View(fm);
         }
 
         // GET: Flights
@@ -53,6 +91,23 @@ namespace WebAppAPIClient.Controllers
             fb.Flight = flight;
 
             return View(fb);
+        }
+
+        // POST: Default/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Details(IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         //public async Task<IActionResult> IndexAsync()

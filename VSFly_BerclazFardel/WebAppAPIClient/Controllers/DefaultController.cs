@@ -4,58 +4,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DTO;
-using BLL;
 
-namespace WebApplication.Controllers
+namespace WebAppAPIClient.Controllers
 {
-    public class FlightController : Controller
+    public class DefaultController : Controller
     {
-        // GET: Flight
+        // GET: Default
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Flight/Details/5
-        public async Task<ActionResult> GetFlight(int id)
+        // GET: Default/Details/5
+        public ActionResult Details(int id)
         {
-            var flights = await FlightManager.GetAllFlightsAsync();
-
-            var flight = new Flight();
-
-            foreach(Flight f in flights)
-            {
-                if (f.FlightNo == id)
-                {
-                    flight = f;
-                }
-            }
-
-            return View(flight);
+            return View();
         }
 
-        // GET: Flight
-        public async Task<ActionResult> GetAllFlights()
-        {
-            var flights = await FlightManager.GetAllFlightsAsync();
-
-            return View(flights);
-        }
-
-        // GET: Flight/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        // GET: Flight/Create
+        // GET: Default/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Flight/Create
+        // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -72,13 +44,13 @@ namespace WebApplication.Controllers
             }
         }
 
-        // GET: Flight/Edit/5
+        // GET: Default/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Flight/Edit/5
+        // POST: Default/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -95,13 +67,13 @@ namespace WebApplication.Controllers
             }
         }
 
-        // GET: Flight/Delete/5
+        // GET: Default/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Flight/Delete/5
+        // POST: Default/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
