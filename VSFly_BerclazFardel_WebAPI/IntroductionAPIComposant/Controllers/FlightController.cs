@@ -63,9 +63,7 @@ namespace IntroductionAPIComposant.Controllers
             return basePrice;
         }
 
-
-
-        // GET: api/GetAllFlights
+        // GET: api/flight
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Flight>>> GetAllFlights()
         {
@@ -82,7 +80,7 @@ namespace IntroductionAPIComposant.Controllers
             return lf;
         }
 
-        // GET: api/GetFlight/5
+        // GET: api/flight/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Flight>> GetFlight(int id)
         {
@@ -93,7 +91,51 @@ namespace IntroductionAPIComposant.Controllers
                 return NotFound();
             }
 
+            flight.BasePrice = 10000;
+
             return flight;
+        }
+
+        // GET: api/GetFlightTotalSales/5
+        [HttpGet("{id}/totalsales")]
+        public async Task<ActionResult<double>> GetFlightTotalSales(int id)
+        {
+            var flight = await _context.FlightSet.FindAsync(id);
+
+            if (flight == null)
+            {
+                return NotFound();
+            }
+
+            double salesPriceTotal = 0;
+            foreach (Booking b in flight.BookingSet)
+            {
+                salesPriceTotal += b.SalesPrice;
+            }
+
+            return salesPriceTotal;
+        }
+
+        // GET: api/GetDestinationAvSales/GNV
+        [HttpGet("dest/{dest}")]
+        public async Task<ActionResult<double>> GetDestinationAvSales(string dest)
+        {
+
+            List<Flight> lf = await _context.FlightSet.Where(x => x.Destination.Equals(dest)).ToListAsync();
+            double salesPriceTotal = 0;
+            int count = 0;
+
+            foreach (Flight f in lf)
+            {
+                foreach (Booking b in f.BookingSet) 
+                {
+                    salesPriceTotal += b.SalesPrice;
+                    count++;
+                }
+
+            }
+
+            return salesPriceTotal/count;
         }
 
         // PUT: api/ToDoItems/5

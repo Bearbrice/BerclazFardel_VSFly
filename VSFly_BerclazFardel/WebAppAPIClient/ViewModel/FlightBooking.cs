@@ -11,8 +11,6 @@ namespace WebAppAPIClient.ViewModel
     {
         public FlightModel Flight { get; set; }
 
-        public double SalesPrice { get; set; }
-
         public string Firstname { get; set; }
 
         public string Lastname { get; set; }

@@ -14,8 +14,10 @@ namespace WebAppAPIClient.Models
 
         public DateTime Date { get; set; }
 
-        public short Seats { get; set; }
+        public short TotalSeats { get; set; }
 
         public double BasePrice { get; set; }
+
+        public short SeatsBooked { get; set; }
     }
 }

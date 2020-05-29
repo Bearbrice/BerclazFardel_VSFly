@@ -30,7 +30,7 @@ namespace WebAppAPIClient.Controllers
         {
 
             FlightBooking fb = new FlightBooking();
-            fb.Flight = flightModel;
+            //fb.Flight = flightModel;
 
             
             return View(fb);

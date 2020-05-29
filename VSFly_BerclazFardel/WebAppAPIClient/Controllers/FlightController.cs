@@ -38,10 +38,21 @@ namespace WebAppAPIClient.Controllers
         {
             var flight = await ApiClientFactory.Instance.GetFlight(id);
 
-            FlightBooking fb = new FlightBooking();
-            fb.Flight = flight;
+            //FlightBooking fb = new FlightBooking();
+            //fb.Flight = flight;
             
             return View(flight);
+        }
+
+        // GET: Flight
+        public async Task<ActionResult> Details(int id)
+        {
+            var flight = await ApiClientFactory.Instance.GetFlight(id);
+
+            FlightBooking fb = new FlightBooking();
+            fb.Flight = flight;
+
+            return View(fb);
         }
 
         //public async Task<IActionResult> IndexAsync()

@@ -4,11 +4,8 @@
     ViewData["Title"] = "GetAllFlights";
 }
 
-<h1>GetAllFlights</h1>
+<h1>All flights</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -25,10 +22,13 @@
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Seats)
+                @Html.DisplayNameFor(model => model.TotalSeats)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatsBooked)
             </th>
             <th></th>
         </tr>
@@ -49,16 +49,16 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Seats)
+                @Html.DisplayFor(modelItem => item.TotalSeats)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BasePrice)
             </td>
             <td>
-                @Html.ActionLink("Book", "Create", "Booking", new { flightModel = item  })
-                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                @Html.DisplayFor(modelItem => item.SeatsBooked)
+            </td>
+            <td>
+                @Html.ActionLink("Book", "Details", new {  id=item.FlightNo })
             </td>
         </tr>
 }
