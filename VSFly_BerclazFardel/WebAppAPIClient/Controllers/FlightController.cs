@@ -96,8 +96,30 @@ namespace WebAppAPIClient.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Details(IFormCollection collection)
+        public async Task<ActionResult> Details(int id, string firstname, string lastname)
         {
+            /* STEP 1 : Retrive client ID */
+
+            /*1.1 - PENDING */
+            /* WON'T BE DONE IN PRIORITY - WE SAY ONLY EXISTING PASSENGER CAN BOOK*/
+            //Create client
+            //int passengerId   = CreateClient(fb.Firstname, fb.Lastname);
+
+            /*1.2*/
+
+
+
+
+            //Create booking
+            BookingModel bm = new BookingModel();
+            
+            //bm.FlightNo = fb.Flight.FlightNo;
+            //bm.SalesPrice = fb.Flight.BasePrice;
+
+            //Notify that a place is no available no more
+
+
+
             try
             {
                 // TODO: Add insert logic here
