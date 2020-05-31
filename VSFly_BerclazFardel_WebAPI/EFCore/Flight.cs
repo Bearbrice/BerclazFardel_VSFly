@@ -26,7 +26,7 @@ namespace EFCore
         public short? TotalSeats { get; set; }
 
         [Required]
-        public double BasePrice { get; set; }
+        public float BasePrice { get; set; }
 
         public short SeatsBooked { get; set; }
 

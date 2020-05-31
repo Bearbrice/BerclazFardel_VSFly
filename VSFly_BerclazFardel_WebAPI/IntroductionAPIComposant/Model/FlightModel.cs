@@ -18,7 +18,7 @@ namespace WebAPI.Model
 
         public short TotalSeats { get; set; }        
 
-        public double BasePrice { get; set; }
+        public float BasePrice { get; set; }
 
         public short SeatsBooked { get; set; }
 

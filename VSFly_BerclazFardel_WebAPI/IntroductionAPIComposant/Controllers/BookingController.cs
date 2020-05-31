@@ -79,14 +79,14 @@ namespace IntroductionAPIComposant.Controllers
         // POST: api/ToDoItems
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPost]
-        //public async Task<ActionResult<Booking>> PostBooking(Booking Booking)
-        //{
-        //    _context.BookingSet.Add(Booking);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetBooking", new { id = Booking.BookingNo }, Booking);
-        //}
+        [HttpPost]
+        public async Task<ActionResult<Booking>> PostBooking(Booking booking)
+        {
+            _context.BookingSet.Add(booking);
+            await _context.SaveChangesAsync();
+            return booking;
+            //return CreatedAtAction("GetBooking", new { f_id = booking.FlightNo, p_id = booking.PassengerID, sp = booking.SalesPrice }, booking);
+        }
 
         // DELETE: api/ToDoItems/5
         [HttpDelete("{id}")]

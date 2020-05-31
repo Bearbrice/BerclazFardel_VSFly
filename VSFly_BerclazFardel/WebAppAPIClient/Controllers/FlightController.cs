@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -45,7 +46,7 @@ namespace WebAppAPIClient.Controllers
             }
             if (!String.IsNullOrEmpty(sDate))
             {
-                fm = fm.Where(f => f.Date.ToString().Substring(0,10)==sDate);
+                fm = fm.Where(f => f.Date.ToString().Substring(0, 10) == sDate);
             }
 
             ///*SORT*/
@@ -69,6 +70,8 @@ namespace WebAppAPIClient.Controllers
             }
 
             return View(fm);
+
+            //return View(flights);
         }
 
         // GET: Flights
@@ -93,10 +96,25 @@ namespace WebAppAPIClient.Controllers
             return View(fb);
         }
 
+        //// POST: Default/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Details2(int id, float basePrice, string firstname, string lastname)
+        //{
+
+        //    var flight = await ApiClientFactory.Instance.GetFlight(id);
+
+
+
+
+        //    return View();
+        //}
+
+
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Details(int id, string firstname, string lastname)
+        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float salePrice)
         {
             /* STEP 1 : Retrive client ID */
 
@@ -107,16 +125,59 @@ namespace WebAppAPIClient.Controllers
 
             /*1.2*/
 
+            /* PASSENGER MNGMT */
+            //Check if passenger existing
+            //var passenger = await ApiClientFactory.Instance.GetPassenger(firstname, lastname);
+            try
+            {
 
-
-
-            //Create booking
-            BookingModel bm = new BookingModel();
+            }catch(Exception e)
+            {
+                
+            }
             
-            //bm.FlightNo = fb.Flight.FlightNo;
-            //bm.SalesPrice = fb.Flight.BasePrice;
 
-            //Notify that a place is no available no more
+          
+
+
+            // Create passenger to database
+            Passenger p = new Passenger();
+            p.Firstname = firstname;
+            p.Lastname = lastname;
+
+            //HTTP POST 
+            var postPassenger = await ApiClientFactory.Instance.PostPassenger(p);
+
+            if (postPassenger.isSuccess)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            /* BOOKING MNGMT */
+
+            // Create booking to database
+            Booking b = new Booking();
+            b.FlightNo =flightNo;
+            b.PassengerID = 1;
+            b.SalesPrice =salePrice;
+
+            //HTTP POST 
+            var postBooking = await ApiClientFactory.Instance.PostBooking(b);
+
+            if (postBooking.isSuccess)
+            {
+
+            }
+            else
+            {
+                
+            }
+
+            /* FLIGHT MNGMT */
 
 
 

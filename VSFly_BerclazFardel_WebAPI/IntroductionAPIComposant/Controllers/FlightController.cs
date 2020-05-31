@@ -25,9 +25,9 @@ namespace IntroductionAPIComposant.Controllers
             _context = context;
         }
 
-        public double CalculSalesPrice(Flight flight)
+        public float CalculSalesPrice(Flight flight)
         {
-            double basePrice = flight.BasePrice;
+            float basePrice = flight.BasePrice;
             DateTime flightDate = flight.Date;
 
             double pourcentage = (double)(flight.SeatsBooked / flight.TotalSeats)*100;
@@ -74,7 +74,6 @@ namespace IntroductionAPIComposant.Controllers
             {
                 // Calculate for each flight
                 f.BasePrice = CalculSalesPrice(f);
-
             }
 
             return lf;
@@ -91,7 +90,7 @@ namespace IntroductionAPIComposant.Controllers
                 return NotFound();
             }
 
-            flight.BasePrice = 10000;
+            flight.BasePrice = CalculSalesPrice(flight);
 
             return flight;
         }

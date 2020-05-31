@@ -2,15 +2,13 @@
 
 @{
     ViewData["Title"] = "Details";
-
-    var id = Model.Flight.FlightNo;
 }
 
 <h1>Details</h1>
 
+<h4>FlightBooking</h4>
+<hr />
 <div>
-    <h4>FlightBooking</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight.FlightNo)
@@ -54,46 +52,60 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Flight.SeatsBooked)
         </dd>
-        <dt class="col-sm-2" hidden>
-            @Html.DisplayNameFor(model => model.Flight)
-        </dt>
-        <dd class="col-sm-10" hidden>
-            @Html.DisplayFor(model => model.Flight)
-        </dd>
-
-        
     </dl>
-
-
-
-    <form asp-action="Details">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group" hidden>
-            <label asp-for="Flight.FlightNo" class="control-label"></label>
-            <input asp-for="Flight.FlightNo" class="form-control" id="txtFirstName" value="@id" />
-            <span asp-validation-for="Flight.FlightNo" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Firstname" class="control-label"></label>
-            <input asp-for="Firstname" class="form-control" id="txtFirstName" />
-            <span asp-validation-for="Firstname" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Lastname" class="control-label"></label>
-            <input asp-for="Lastname" class="form-control" id="txtLastName" />
-            <span asp-validation-for="Lastname" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <input type="submit" value="Confirm booking" class="btn btn-primary" />
-        </div>
-
-        @*@Html.ActionLink("Confirm booking", "Details", new { id = Model.Flight.FlightNo, firstName = txtFirstName, lastName = txtLastName.value })*@
-    </form>
-
-
 </div>
 
 <div>
-    <a asp-action="Index">Back to all flights</a>
+    @using (Html.BeginForm("Details", "Flight", new { flightNo = Model.Flight.FlightNo, basePrice = Model.Flight.BasePrice }, FormMethod.Post))
+    {
+
+        <b>@Html.Label("Enter your firstname")</b>
+        <br />
+        @Html.TextBox("firstname", "", new { style = "width: 305px;" })
+
+        <br /><br />
+        <b>@Html.Label("Enter your lastname")</b>
+        <br />
+        @Html.TextBox("lastname", "", new { style = "width: 305px;" })
+
+        <br /><br />
+        @*<input type="button" class="btn btn-info btn-sm active" style="width:150px" value="CANCEL" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />*@
+        <input type="submit" class="btn btn-info btn-sm active" style="background-color:green;width:150px;" value="BOOK" id="btnSubmit" name="Submit" />
+    }
 </div>
+
+
+
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-action="Details">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Flight.BasePrice" class="control-label"></label>
+                    <input asp-for="Flight.BasePrice" class="form-control" />
+                    <span asp-validation-for="Flight.BasePrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Firstname" class="control-label"></label>
+                    <input asp-for="Firstname" class="form-control" />
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Lastname" class="control-label"></label>
+                    <input asp-for="Lastname" class="form-control" />
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
