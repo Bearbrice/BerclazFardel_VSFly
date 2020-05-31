@@ -138,6 +138,28 @@ namespace IntroductionAPIComposant.Controllers
             return salesPriceTotal/count;
         }
 
+        // GET: api/Flight/tickets/geneve
+        [HttpGet("tickets/{dest}")]
+        public async Task<ActionResult<IEnumerable<string>>> GetDestTickets(string dest)
+        {
+
+            List<Flight> lf = await _context.FlightSet.Where(x => x.Destination.Equals(dest)).ToListAsync();
+
+            List<string> tickets = new List<string>();
+            string ticket = "";
+
+            foreach (Flight f in lf)
+            {
+                foreach (Booking b in f.BookingSet)
+                {
+                    ticket = "Flight number : " + f.FlightNo + " Passenger : " + b.Passenger.Firstname + " " + b.Passenger.Lastname + " Sales price : " + b.SalesPrice;
+                    tickets.Add(ticket);
+                }
+
+            }
+            return tickets;
+        }
+
         // PUT: api/ToDoItems/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
