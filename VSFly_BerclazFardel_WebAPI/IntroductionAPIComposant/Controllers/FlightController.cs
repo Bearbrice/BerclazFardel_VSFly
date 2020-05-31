@@ -163,12 +163,21 @@ namespace IntroductionAPIComposant.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFlight(long id, Flight flight)
+        public async Task<IActionResult> PutFlight(int id)
         {
-            if (id != flight.FlightNo)
+            var flight = await _context.FlightSet.FindAsync(id);
+
+            if (flight == null)
             {
-                return BadRequest();
+                return NotFound();
             }
+
+            //if (id != flight.FlightNo)
+            //{
+            //    return BadRequest();
+            //}
+
+            flight.SeatsBooked += 1;
 
             _context.Entry(flight).State = EntityState.Modified;
 

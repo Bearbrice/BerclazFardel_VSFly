@@ -80,5 +80,24 @@ namespace WebAppAPIClient
                 };
             }
         }
+
+        /* Put */
+        private async Task<Message<T>> PutAsync<T>(Uri requestUrl, T content)
+        {
+            var response = await _httpClient.PutAsync(requestUrl.ToString(), CreateHttpContent<T>(content));
+            response.EnsureSuccessStatusCode();
+            var data = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<Message<T>>(data);
+        }
+
+        /* ---------------- DEV --------------------------------------*/
+
+        //private async Task<T> GetAsync<T>(Uri requestUrl)
+        //{
+        //    var response = await _httpClient.GetAsync(requestUrl, HttpCompletionOption.ResponseHeadersRead);
+        //    response.EnsureSuccessStatusCode();
+        //    var data = await response.Content.ReadAsStringAsync();
+        //    return JsonConvert.DeserializeObject<T>(data);
+        //}
     }
 }

@@ -116,3 +116,4 @@ C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\We
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebAppAPIClient\obj\Debug\netcoreapp3.1\Razor\Views\Flight\DetailsEdit.cshtml.g.cs
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebAppAPIClient\obj\Debug\netcoreapp3.1\Razor\Views\Flight\Details_OFF.cshtml.g.cs
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebAppAPIClient\obj\Debug\netcoreapp3.1\Razor\Views\Flight\Details2.cshtml.g.cs
+C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel\WebAppAPIClient\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs

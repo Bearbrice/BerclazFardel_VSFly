@@ -49,7 +49,7 @@ namespace WebAppAPIClient.Controllers
                 fm = fm.Where(f => f.Date.ToString().Substring(0, 10) == sDate);
             }
 
-            ///*SORT*/
+            /*SORT*/
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
 
@@ -114,8 +114,42 @@ namespace WebAppAPIClient.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float salePrice)
+        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice)
         {
+            /* --- PASSENGER MNGMT --- */
+            /*Check if passenger exist*/
+            var passenger = new Passenger();
+
+            try
+            {
+                passenger = await ApiClientFactory.Instance.GetPassenger(firstname, lastname);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No passenger found.");
+                return RedirectToAction("Details", new { id = flightNo });
+            }
+
+
+            /* --- BOOKING MNGMT --- */
+            // Create booking to database
+            Booking b = new Booking();
+            b.FlightNo = flightNo;
+            b.PassengerID = passenger.PersonID;
+            b.SalesPrice = basePrice;
+
+            //HTTP POST 
+            var postBooking = await ApiClientFactory.Instance.PostBooking(b);
+
+
+            /* --- FLIGHT MNGMT --- */
+            /*Update flight*/
+            //HTTP PUT
+            var flight = await ApiClientFactory.Instance.GetFlight(flightNo);
+            var putFlight = await ApiClientFactory.Instance.PutFlight(flightNo, flight);
+
+
+
             /* STEP 1 : Retrive client ID */
 
             /*1.1 - PENDING */
@@ -125,23 +159,17 @@ namespace WebAppAPIClient.Controllers
 
             /*1.2*/
 
-            /* PASSENGER MNGMT */
+
             //Check if passenger existing
             //var passenger = await ApiClientFactory.Instance.GetPassenger(firstname, lastname);
-            try
-            {
-
-            }catch(Exception e)
-            {
-                
-            }
-            
-
-          
 
 
-            // Create passenger to database
-            Passenger p = new Passenger();
+
+
+
+
+            // ABORTED - Create passenger to database
+            /*Passenger p = new Passenger();
             p.Firstname = firstname;
             p.Lastname = lastname;
 
@@ -155,29 +183,11 @@ namespace WebAppAPIClient.Controllers
             else
             {
 
-            }
+            }*/
 
-            /* BOOKING MNGMT */
 
-            // Create booking to database
-            Booking b = new Booking();
-            b.FlightNo =flightNo;
-            b.PassengerID = 1;
-            b.SalesPrice =salePrice;
 
-            //HTTP POST 
-            var postBooking = await ApiClientFactory.Instance.PostBooking(b);
-
-            if (postBooking.isSuccess)
-            {
-
-            }
-            else
-            {
-                
-            }
-
-            /* FLIGHT MNGMT */
+            ///* FLIGHT MNGMT */
 
 
 
