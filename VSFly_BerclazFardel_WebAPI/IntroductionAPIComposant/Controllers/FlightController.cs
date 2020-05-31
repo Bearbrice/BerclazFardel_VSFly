@@ -118,7 +118,7 @@ namespace IntroductionAPIComposant.Controllers
 
         // GET: api/GetDestinationAvSales/GNV
         [HttpGet("dest/{dest}")]
-        public async Task<ActionResult<double>> GetDestinationAvSales(string dest)
+        public async Task<ActionResult<double>> GetFlightTotalSales(string dest)
         {
 
             List<Flight> lf = await _context.FlightSet.Where(x => x.Destination.Equals(dest)).ToListAsync();

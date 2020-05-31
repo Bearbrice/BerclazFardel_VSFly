@@ -22,7 +22,7 @@ namespace IntroductionAPIComposant
 
         public IConfiguration Configuration { get; }
 
-        
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -32,6 +32,11 @@ namespace IntroductionAPIComposant
             services.AddDbContext<VSFlightContext>(opt => opt.UseInMemoryDatabase("VSFlightList"));
 
             services.AddControllers();
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
