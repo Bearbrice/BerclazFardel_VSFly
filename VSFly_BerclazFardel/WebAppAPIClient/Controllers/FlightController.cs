@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebAppAPIClient.Factory;
 using WebAppAPIClient.Models;
+using WebAppAPIClient.Models.Decorator;
 using WebAppAPIClient.Utility;
 using WebAppAPIClient.ViewModel;
 
@@ -114,7 +116,7 @@ namespace WebAppAPIClient.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice)
+        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice, bool popcorn, bool film, bool mojito)
         {
             /* --- PASSENGER MNGMT --- */
             /*Check if passenger exist*/
@@ -126,7 +128,7 @@ namespace WebAppAPIClient.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine("No passenger found.");
+                Console.WriteLine("No passenger found." + e.Message);
                 return RedirectToAction("Details", new { id = flightNo });
             }
 
@@ -149,48 +151,34 @@ namespace WebAppAPIClient.Controllers
 
             var putFlight = await ApiClientFactory.Instance.PutFlight(flightNo, flight);
 
+            /* Pattern Decorator*/
+            Models.Decorator.Flight f = new Models.Decorator.Flight();
 
-
-            /* STEP 1 : Retrive client ID */
-
-            /*1.1 - PENDING */
-            /* WON'T BE DONE IN PRIORITY - WE SAY ONLY EXISTING PASSENGER CAN BOOK*/
-            //Create client
-            //int passengerId   = CreateClient(fb.Firstname, fb.Lastname);
-
-            /*1.2*/
-
-
-            //Check if passenger existing
-            //var passenger = await ApiClientFactory.Instance.GetPassenger(firstname, lastname);
-
-
-
-
-
-
-            // ABORTED - Create passenger to database
-            /*Passenger p = new Passenger();
-            p.Firstname = firstname;
-            p.Lastname = lastname;
-
-            //HTTP POST 
-            var postPassenger = await ApiClientFactory.Instance.PostPassenger(p);
-
-            if (postPassenger.isSuccess)
+            if (popcorn)
             {
-
+                f = new Popcorn(f);
             }
-            else
+
+            if (film)
             {
+                f = new Film(f);
+            }
 
-            }*/
+            if (mojito)
+            {
+                f = new Mojito(f);
+            }
+
+            //FlightBooking fb = new FlightBooking();
+            //fb.Flight = flight;
+            //fb.Firstname = firstname;
+            //fb.Lastname = lastname;
+            //fb.Description = f.GetDescription();
+
+            String _description = f.GetDescription();
 
 
-
-            ///* FLIGHT MNGMT */
-
-
+            return RedirectToAction("BookingDetails", new { id=flightNo, firstname, lastname, price=basePrice, description=_description });
 
             try
             {
@@ -209,6 +197,20 @@ namespace WebAppAPIClient.Controllers
         //    var data = await ApiClientFactory.Instance.GetTodoItems();
         //    return View(data);
         //}
+
+        public async Task<ActionResult> BookingDetails(int id, string firstname, string lastname, float price, string description)
+        {
+            var flight = await ApiClientFactory.Instance.GetFlight(id);
+
+            FlightBooking fb = new FlightBooking();
+            fb.Flight = flight;
+            fb.Flight.BasePrice = price;
+            fb.Firstname = firstname;
+            fb.Lastname = lastname;
+            fb.Description = description;
+
+            return View(fb);
+        }
 
         public IActionResult Privacy()
         {

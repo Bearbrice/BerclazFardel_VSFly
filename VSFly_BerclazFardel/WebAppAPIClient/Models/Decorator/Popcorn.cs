@@ -5,18 +5,20 @@ using System.Threading.Tasks;
 
 namespace WebAppAPIClient.Models.Decorator
 {
-    public class Popcorn : FlightModel
+    public class Popcorn : Flight
     {
-        private FlightModel f;
+        protected static string _description = "with popcorn ";
 
-        public Popcorn(FlightModel f)
+        private Flight Flight = null;
+
+        public Popcorn(Flight flight)
         {
-            this.f = f;
+            this.Flight = flight;
         }
 
         public override string GetDescription()
         {
-            return f.GetDescription() + " with some delicious popcorn";
+            return this.Flight.GetDescription() + _description;
         }
     }
 }

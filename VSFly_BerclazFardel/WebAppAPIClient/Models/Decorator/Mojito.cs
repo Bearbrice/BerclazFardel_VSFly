@@ -5,19 +5,20 @@ using System.Threading.Tasks;
 
 namespace WebAppAPIClient.Models.Decorator
 {
-    public class Mojito : FlightModel
+    public class Mojito : Flight
     {
-        private FlightModel f;
+        protected static string _description = "with mojito ";
 
-        public Mojito(FlightModel f)
+        private Flight Flight = null;
+
+        public Mojito(Flight flight)
         {
-            this.f = f;
+            this.Flight = flight;
         }
 
         public override string GetDescription()
         {
-            return f.GetDescription() + " with a mojito";
+            return this.Flight.GetDescription() + _description;
         }
-
     }
 }

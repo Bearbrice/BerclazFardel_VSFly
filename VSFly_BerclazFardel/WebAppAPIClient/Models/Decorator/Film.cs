@@ -5,19 +5,20 @@ using System.Threading.Tasks;
 
 namespace WebAppAPIClient.Models.Decorator
 {
-    public class Film : FlightModel
+    public class Film : Flight
     {
-        private FlightModel f;
+        protected static string _description = "with film ";
 
-        public Film(FlightModel f)
+        private Flight Flight = null;
+
+        public Film(Flight flight)
         {
-            this.f = f;
+            this.Flight = flight;
         }
 
         public override string GetDescription()
         {
-            return f.GetDescription() + " with a film";
+            return this.Flight.GetDescription() + _description;
         }
-
     }
 }

@@ -30,6 +30,10 @@ namespace WebAppAPIClient.Controllers
             return View(data);
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
