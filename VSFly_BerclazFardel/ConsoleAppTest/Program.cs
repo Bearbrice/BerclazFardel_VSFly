@@ -1,4 +1,6 @@
 ﻿using System;
+using WebAppAPIClient;
+using WebAppAPIClient.Models.Decorator;
 
 namespace ConsoleAppTest
 {
@@ -6,7 +8,18 @@ namespace ConsoleAppTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            FlightModel f = new FlightModel();
+
+            Console.WriteLine(f.GetDescription());
+
+            f = new Film(f);
+
+            Console.WriteLine(f.GetDescription());
+
+            f = new Popcorn(f);
+
+            Console.WriteLine(f.GetDescription());
+
         }
     }
 }

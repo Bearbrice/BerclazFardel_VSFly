@@ -68,7 +68,15 @@
         <br />
         @Html.TextBox("lastname", "", new { style = "width: 305px;" })
 
+
         <br /><br />
+        <b>@Html.Label("Check your options")</b>
+        <br />
+        @Html.CheckBox("popcorn", false, new { style = "width: 305px;" })
+        @Html.CheckBox("film", false, new { style = "width: 305px;" })
+        @Html.CheckBox("mojito", false, new { style = "width: 305px;" })
+        <br /><br />
+
         @*<input type="button" class="btn btn-info btn-sm active" style="width:150px" value="CANCEL" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />*@
         <input type="submit" class="btn btn-info btn-sm active" style="background-color:green;width:150px;" value="BOOK" id="btnSubmit" name="Submit" />
     }

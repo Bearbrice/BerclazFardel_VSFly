@@ -11,7 +11,6 @@ namespace WebAppAPIClient
 {
     public partial class ApiClient
     {
-
         private readonly HttpClient _httpClient;
         private Uri BaseEndpoint { get; set; }
 

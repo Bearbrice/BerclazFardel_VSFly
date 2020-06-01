@@ -146,6 +146,7 @@ namespace WebAppAPIClient.Controllers
             /*Update flight*/
             //HTTP PUT
             var flight = await ApiClientFactory.Instance.GetFlight(flightNo);
+
             var putFlight = await ApiClientFactory.Instance.PutFlight(flightNo, flight);
 
 
