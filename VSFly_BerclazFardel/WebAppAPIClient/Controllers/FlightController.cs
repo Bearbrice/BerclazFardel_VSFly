@@ -90,6 +90,8 @@ namespace WebAppAPIClient.Controllers
         // GET: Flight
         public async Task<ActionResult> Details(int id)
         {
+            ViewBag.Error = Convert.ToString(TempData["error"]);
+
             var flight = await ApiClientFactory.Instance.GetFlight(id);
 
             FlightBooking fb = new FlightBooking();
@@ -116,7 +118,7 @@ namespace WebAppAPIClient.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice, bool popcorn, bool film, bool mojito)
+        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice,bool popcorn, bool film, bool mojito)
         {
             /* --- PASSENGER MNGMT --- */
             /*Check if passenger exist*/
@@ -128,10 +130,12 @@ namespace WebAppAPIClient.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine("No passenger found." + e.Message);
+                //Console.WriteLine("No passenger found." + e.Message);
+
+                TempData["error"] = "noAccount";
+                
                 return RedirectToAction("Details", new { id = flightNo });
             }
-
 
             /* --- BOOKING MNGMT --- */
             // Create booking to database
@@ -142,7 +146,6 @@ namespace WebAppAPIClient.Controllers
 
             //HTTP POST 
             var postBooking = await ApiClientFactory.Instance.PostBooking(b);
-
 
             /* --- FLIGHT MNGMT --- */
             /*Update flight*/
@@ -169,27 +172,10 @@ namespace WebAppAPIClient.Controllers
                 f = new Mojito(f);
             }
 
-            //FlightBooking fb = new FlightBooking();
-            //fb.Flight = flight;
-            //fb.Firstname = firstname;
-            //fb.Lastname = lastname;
-            //fb.Description = f.GetDescription();
 
             String _description = f.GetDescription();
 
-
             return RedirectToAction("BookingDetails", new { id=flightNo, firstname, lastname, price=basePrice, description=_description });
-
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         //public async Task<IActionResult> IndexAsync()

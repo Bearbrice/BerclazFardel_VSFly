@@ -34,6 +34,14 @@ namespace WebAppAPIClient
             return await GetAsync<Passenger>(requestUrl);
         }
 
+        // GET : BOOKING - SINGLE
+        public async Task<Booking> GetBooking(int flightNo, int passengerID)
+        {
+            var requestUrl = CreateRequestUri(string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                ("Booking/" + flightNo + "/" + passengerID)));
+            return await GetAsync<Booking>(requestUrl);
+        }
+
         //POST : BOOKING
         public async Task<Message<Booking>> PostBooking(Booking model)
         {

@@ -7,7 +7,7 @@ namespace WebAppAPIClient.Models.Decorator
 {
     public class Mojito : Flight
     {
-        protected static string _description = "with mojito ";
+        protected static string _description = "with a mojito ";
 
         private Flight Flight = null;
 

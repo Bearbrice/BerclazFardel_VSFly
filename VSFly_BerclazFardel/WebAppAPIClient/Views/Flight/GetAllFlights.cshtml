@@ -2,6 +2,10 @@
 
 @{
     ViewData["Title"] = "GetAllFlights";
+
+    String ButtonCss = "border-radius: 4px;color:white;";
+    var fillRate = 0;
+
 }
 
 <h1>All flights</h1>
@@ -10,7 +14,7 @@
     <caption style="text-align:center">
         @using (Html.BeginForm())
         {
-            <input type="submit" value="Show all" />
+            <input type="submit" value="Show all" style="@ButtonCss background-color:dodgerblue;" />
         }
         </caption>
     <thead>
@@ -22,7 +26,7 @@
                         Find by departure:
                     </p>
                     @Html.TextBox("SDeparture")
-                    <input type="submit" value="Search" />
+                    <input type="submit" value="Search" style="@ButtonCss background-color:deepskyblue;" />
 
                 }
             </th>
@@ -33,7 +37,7 @@
                         Find by destination:
                     </p>
                     @Html.TextBox("SDestination")
-                    <input type="submit" value="Search" />
+                    <input type="submit" value="Search" style="@ButtonCss background-color:deepskyblue;" />
 
                 }
             </th>
@@ -41,10 +45,10 @@
                 @using (Html.BeginForm())
                 {
                     <p>
-                        Find by date (XX.XX.XXXX):
+                        Find by date (00.00.0000):
                     </p>
                     @Html.TextBox("SDate")
-                    <input type="submit" value="Search" />
+                    <input type="submit" value="Search" style="@ButtonCss background-color:deepskyblue;" />
 
                 }
             </th>
@@ -73,11 +77,14 @@
                 @Html.DisplayNameFor(model => model.TotalSeats)
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.BasePrice)*@
-                @Html.ActionLink("Price", "GetAllFlights", new { sortOrder = ViewBag.PriceSortParm })
+                @Html.DisplayNameFor(model => model.SeatsBooked)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SeatsBooked)
+                Fill rate
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.BasePrice)*@
+                @Html.ActionLink("Price", "GetAllFlights", new { sortOrder = ViewBag.PriceSortParm })
             </th>
             <th></th>
         </tr>
@@ -85,32 +92,63 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FlightNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Departure)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Destination)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalSeats)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BasePrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SeatsBooked)
-                </td>
-                <td>
-                    @Html.ActionLink("Book", "Details", new { id = item.FlightNo })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatsBooked)
+            </td>
+            <td>
+
+                @{ 
+                    fillRate = (item.SeatsBooked * 100) / @item.TotalSeats;
+                }
+
+                @if (fillRate >= 80)
+                {
+                    <span style="color:red;">
+                        @fillRate
+                        %
+                    </span>
+                }
+
+                @if (fillRate >= 50)
+                {
+                    <span style="color:orange;">
+                        @fillRate
+                        %
+                    </span>
+                }
+                else
+                {
+                    <span style="color:forestgreen;">
+                        @fillRate
+                        %
+                    </span>
+                }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasePrice)
+            </td>
+
+            <td>
+                @Html.ActionLink("Book", "Details", new { id = item.FlightNo })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -2,11 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+    var fillRate = 0;
 }
 
-<h1>Details</h1>
+<h1>Booking form</h1>
 
-<h4>FlightBooking</h4>
+<h4>Book this flight</h4>
 <hr />
 <div>
     <dl class="row">
@@ -41,78 +42,96 @@
             @Html.DisplayFor(model => model.Flight.TotalSeats)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Flight.BasePrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Flight.BasePrice)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight.SeatsBooked)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Flight.SeatsBooked)
         </dd>
+        <dt class="col-sm-2">
+            Fill rate
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                fillRate = (Model.Flight.SeatsBooked * 100) / Model.Flight.TotalSeats;
+            }
+
+            @if (fillRate >= 80)
+            {
+                <span style="color:red;">
+                    @fillRate
+                    %
+                </span>
+            }
+
+            @if (fillRate >= 50)
+            {
+                <span style="color:orange;">
+                    @fillRate
+                    %
+                </span>
+            }
+            else
+            {
+                <span style="color:forestgreen;">
+                    @fillRate
+                    %
+                </span>
+            }
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flight.BasePrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flight.BasePrice)
+        </dd>
+
     </dl>
 </div>
 
 <div>
     @using (Html.BeginForm("Details", "Flight", new { flightNo = Model.Flight.FlightNo, basePrice = Model.Flight.BasePrice }, FormMethod.Post))
     {
+        //Options
         <b>@Html.Label("Check your options")</b>
         <br />
         <text>Popcorn</text>
         @Html.CheckBox("popcorn", false, new { style = "width: 50px;" })
+
         <text>Film</text>
         @Html.CheckBox("film", false, new { style = "width: 50px;" })
+
         <text>Mojito</text>
         @Html.CheckBox("mojito", false, new { style = "width: 50px;" })
         <br /><br />
 
+        /* Error message */
+        <p>
+            @if (@ViewBag.Error == "noAccount")
+            {
+                <i style="color:red">You do not have any account. Please create one or contact administrator.</i>
+            }
+        </p>
+
+        //Firstname
         <b>@Html.Label("Enter your firstname")</b>
         <br />
         @Html.TextBox("firstname", "", new { style = "width: 305px;" })
 
+        //Lastname
         <br /><br />
         <b>@Html.Label("Enter your lastname")</b>
         <br />
         @Html.TextBox("lastname", "", new { style = "width: 305px;" })
         <br /><br />
 
-        @*<input type="button" class="btn btn-info btn-sm active" style="width:150px" value="CANCEL" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />*@
         <input type="submit" class="btn btn-info btn-sm active" style="background-color:green;width:150px;" value="BOOK" id="btnSubmit" name="Submit" />
     }
 </div>
 
-
-
-@*<div class="row">
-        <div class="col-md-4">
-            <form asp-action="Details">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Flight.BasePrice" class="control-label"></label>
-                    <input asp-for="Flight.BasePrice" class="form-control" />
-                    <span asp-validation-for="Flight.BasePrice" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Firstname" class="control-label"></label>
-                    <input asp-for="Firstname" class="form-control" />
-                    <span asp-validation-for="Firstname" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Lastname" class="control-label"></label>
-                    <input asp-for="Lastname" class="form-control" />
-                    <span asp-validation-for="Lastname" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
-    </div>*@
-
 <div>
-    <a asp-action="Index">Back to List</a>
+    <br /><br />
+    <a asp-action="GetAllFlights">Go back to all flights</a>
 </div>
 
 @section Scripts {
