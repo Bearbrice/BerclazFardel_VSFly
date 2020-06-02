@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebAPI.Model
 {
@@ -16,7 +13,7 @@ namespace WebAPI.Model
 
         public DateTime Date { get; set; }
 
-        public short TotalSeats { get; set; }        
+        public short TotalSeats { get; set; }
 
         public float BasePrice { get; set; }
 

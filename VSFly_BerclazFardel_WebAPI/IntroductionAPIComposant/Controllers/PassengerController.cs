@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using EFCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using IntroductionAPIComposant.Model;
+using System.Linq;
+using System.Threading.Tasks;
 using WebAPI;
-using WebAPI.Model;
-using EFCore;
-using System.Runtime.InteropServices.ComTypes;
-using Microsoft.Extensions.Logging;
 
 namespace IntroductionAPIComposant.Controllers
 {
@@ -25,24 +18,6 @@ namespace IntroductionAPIComposant.Controllers
             _context = context;
         }
 
-
-
-        //// GET: api/Passenger
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<Passenger>>> GetAllPassengers()
-        //{
-        //    List<Passenger> lf = await _context.PassengerSet.Where(x => x.SeatsBooked != x.TotalSeats).ToListAsync();
-
-        //    // Method price
-        //    foreach (Passenger f in lf)
-        //    {
-        //        // Calculate for each Passenger
-        //        f.BasePrice = CalculSalesPrice(f);
-        //    }
-
-        //    return lf;
-        //}
-
         // GET: api/Passenger/Brice/Berclaz
         [HttpGet("{firstname}/{lastname}")]
         public async Task<ActionResult<Passenger>> GetPassenger(string firstname, string lastname)
@@ -56,21 +31,6 @@ namespace IntroductionAPIComposant.Controllers
 
             return passenger;
         }
-
-        
-
-        //// POST: api/ToDoItems
-        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
-        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPost]
-        //public async Task<ActionResult<Passenger>> PostPassenger(Passenger Passenger)
-        //{
-        //    _context.PassengerSet.Add(Passenger);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetPassenger", new { id = Passenger.PassengerNo }, Passenger);
-        //}
-
 
         private bool PassengerExists(int id)
         {

@@ -1,16 +1,11 @@
-﻿using System;
+﻿using EFCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using IntroductionAPIComposant.Model;
 using WebAPI;
-using WebAPI.Model;
-using EFCore;
-using System.Runtime.InteropServices.ComTypes;
-using Microsoft.Extensions.Logging;
 
 namespace IntroductionAPIComposant.Controllers
 {
@@ -30,17 +25,17 @@ namespace IntroductionAPIComposant.Controllers
             float basePrice = flight.BasePrice;
             DateTime flightDate = flight.Date;
 
-            double pourcentage = (double)(flight.SeatsBooked / flight.TotalSeats)*100;
-            
+            double pourcentage = (double)(flight.SeatsBooked / flight.TotalSeats) * 100;
+
             DateTime date = DateTime.Now;
 
-            TimeSpan diff = flightDate - date ;
+            TimeSpan diff = flightDate - date;
 
             double diffMonths = diff.TotalDays / 30;
 
             //1. If the airplane is more than 80 % full regardless of the date:
             //sale price = 150 % of the base price
-            if (pourcentage > 80) 
+            if (pourcentage > 80)
             {
                 return basePrice * 150 / 100;
             }
@@ -126,7 +121,7 @@ namespace IntroductionAPIComposant.Controllers
 
             foreach (Flight f in lf)
             {
-                foreach (Booking b in f.BookingSet) 
+                foreach (Booking b in f.BookingSet)
                 {
                     salesPriceTotal += b.SalesPrice;
                     count++;
@@ -134,7 +129,7 @@ namespace IntroductionAPIComposant.Controllers
 
             }
 
-            return salesPriceTotal/count;
+            return salesPriceTotal / count;
         }
 
         // GET: api/Flight/tickets/geneve
@@ -171,11 +166,6 @@ namespace IntroductionAPIComposant.Controllers
             {
                 return NotFound();
             }
-
-            //if (id != flight.FlightNo)
-            //{
-            //    return BadRequest();
-            //}
 
             flight.SeatsBooked += 1;
 

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using EFCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using IntroductionAPIComposant.Model;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WebAPI;
-using WebAPI.Model;
-using EFCore;
 
 namespace IntroductionAPIComposant.Controllers
 {
@@ -50,11 +45,6 @@ namespace IntroductionAPIComposant.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBooking(long id, Booking Booking)
         {
-            //if (id != Booking.BookingNo)
-            //{
-            //    return BadRequest();
-            //}
-
             _context.Entry(Booking).State = EntityState.Modified;
 
             try
@@ -63,14 +53,7 @@ namespace IntroductionAPIComposant.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                //if (!ToDoItemExists(id))
-                //{
-                //    return NotFound();
-                //}
-                //else
-                //{
-                //    throw;
-                //}
+
             }
 
             return NoContent();
@@ -85,7 +68,6 @@ namespace IntroductionAPIComposant.Controllers
             _context.BookingSet.Add(booking);
             await _context.SaveChangesAsync();
             return booking;
-            //return CreatedAtAction("GetBooking", new { f_id = booking.FlightNo, p_id = booking.PassengerID, sp = booking.SalesPrice }, booking);
         }
 
         // DELETE: api/ToDoItems/5
@@ -103,10 +85,5 @@ namespace IntroductionAPIComposant.Controllers
 
             return Booking;
         }
-
-        //private bool ToDoItemExists(long id)
-        //{
-        //    //return _context.BookingSet.Any(e => e.BookingNo == id);
-        //}
     }
 }
