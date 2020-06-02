@@ -5,6 +5,7 @@
 
     String ButtonCss = "border-radius: 4px;color:white;";
     var fillRate = 0;
+    string color = "green";
 
 }
 
@@ -113,32 +114,25 @@
             </td>
             <td>
 
-                @{ 
+                @{
                     fillRate = (item.SeatsBooked * 100) / @item.TotalSeats;
-                }
-
-                @if (fillRate >= 80)
-                {
-                    <span style="color:red;">
-                        @fillRate
-                        %
-                    </span>
                 }
 
                 @if (fillRate >= 50)
                 {
-                    <span style="color:orange;">
-                        @fillRate
-                        %
-                    </span>
+                    color = "orange";
                 }
-                else
+
+                @if (fillRate >= 80)
                 {
-                    <span style="color:forestgreen;">
-                        @fillRate
-                        %
-                    </span>
+                    color = "red";
+
                 }
+
+                <span style="color:@color;">
+                    @fillRate
+                    %
+                </span>
 
             </td>
             <td>

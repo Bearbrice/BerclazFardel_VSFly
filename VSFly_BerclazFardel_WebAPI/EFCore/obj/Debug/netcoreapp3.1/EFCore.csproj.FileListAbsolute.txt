@@ -97,3 +97,4 @@ C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_We
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.dll
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.pdb
 C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.genruntimeconfig.cache
+C:\Users\brice\Source\Repos\Bearbrice\BerclazFardel_VSFly\VSFly_BerclazFardel_WebAPI\EFCore\obj\Debug\netcoreapp3.1\EFCore.csprojAssemblyReference.cache

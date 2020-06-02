@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Details";
     var fillRate = 0;
+    string color = "green";
 }
 
 <h1>Booking form</h1>
@@ -55,28 +56,22 @@
                 fillRate = (Model.Flight.SeatsBooked * 100) / Model.Flight.TotalSeats;
             }
 
-            @if (fillRate >= 80)
-            {
-                <span style="color:red;">
-                    @fillRate
-                    %
-                </span>
-            }
-
             @if (fillRate >= 50)
             {
-                <span style="color:orange;">
-                    @fillRate
-                    %
-                </span>
+                color = "orange";
             }
-            else
+
+            @if (fillRate >= 80)
             {
-                <span style="color:forestgreen;">
-                    @fillRate
-                    %
-                </span>
+                color = "red";
+
             }
+
+            <span style="color:@color;">
+                @fillRate
+                %
+            </span>
+
         </dd>
 
         <dt class="col-sm-2">

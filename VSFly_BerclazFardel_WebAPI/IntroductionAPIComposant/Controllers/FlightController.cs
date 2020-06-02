@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI;
+using WebAPI.Model;
 
 namespace IntroductionAPIComposant.Controllers
 {
@@ -20,6 +21,9 @@ namespace IntroductionAPIComposant.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Method to calculate the selling price of a flight based on its departure date and its fill rate
+        /// </summary>
         public float CalculSalesPrice(Flight flight)
         {
             float basePrice = flight.BasePrice;
@@ -58,6 +62,7 @@ namespace IntroductionAPIComposant.Controllers
             return basePrice;
         }
 
+        //a. Return all available flights(not full)
         // GET: api/flight
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Flight>>> GetAllFlights()
@@ -74,6 +79,7 @@ namespace IntroductionAPIComposant.Controllers
             return lf;
         }
 
+        // Will be useful in the web client to get all attributes of a flight easily
         // GET: api/flight/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Flight>> GetFlight(int id)
@@ -90,7 +96,25 @@ namespace IntroductionAPIComposant.Controllers
             return flight;
         }
 
-        // GET: api/GetFlightTotalSales/5
+        //b. Return the sale price of a flight
+        // GET: api/flight/1/price
+        [HttpGet("{id}/price")]
+        public async Task<ActionResult<double>> GetFlightPrice(int id)
+        {
+            var flight = await _context.FlightSet.FindAsync(id);
+
+            if (flight == null)
+            {
+                return NotFound();
+            }
+
+            flight.BasePrice = CalculSalesPrice(flight);
+
+            return flight.BasePrice;
+        }
+
+        //d. Return the total sale price of all tickets sold for a flight
+        // GET: api/flight/1/totalsales
         [HttpGet("{id}/totalsales")]
         public async Task<ActionResult<double>> GetFlightTotalSales(int id)
         {
@@ -110,8 +134,9 @@ namespace IntroductionAPIComposant.Controllers
             return salesPriceTotal;
         }
 
-        // GET: api/GetDestinationAvSales/GNV
-        [HttpGet("dest/{dest}")]
+        //e. Return the average sale price of all tickets sold for a destination (multiple flights possible)
+        // GET: api/flight/avg/geneve
+        [HttpGet("avg/{dest}")]
         public async Task<ActionResult<double>> GetFlightTotalSales(string dest)
         {
 
@@ -132,29 +157,36 @@ namespace IntroductionAPIComposant.Controllers
             return salesPriceTotal / count;
         }
 
+        //f. Return the list of all tickets sold for a destination with the first and last name of the travelers and the flight number as well as the sale price of each ticket.
         // GET: api/Flight/tickets/geneve
         [HttpGet("tickets/{dest}")]
-        public async Task<ActionResult<IEnumerable<string>>> GetDestTickets(string dest)
+        public async Task<ActionResult<IEnumerable<BookingDestinationModel>>> GetDestTickets(string dest)
         {
-
             List<Flight> lf = await _context.FlightSet.Where(x => x.Destination.Equals(dest)).ToListAsync();
 
-            List<string> tickets = new List<string>();
-            string ticket = "";
+            List<BookingDestinationModel> bdmList = new List<BookingDestinationModel>();
+            BookingDestinationModel bdm;
 
             foreach (Flight f in lf)
             {
                 foreach (Booking b in f.BookingSet)
                 {
-                    ticket = "Flight number : " + f.FlightNo + " Passenger : " + b.Passenger.Firstname + " " + b.Passenger.Lastname + " Sales price : " + b.SalesPrice;
-                    tickets.Add(ticket);
+                    bdm = new BookingDestinationModel
+                    {
+                        FlightNo = f.FlightNo,
+                        Firstname = b.Passenger.Firstname,
+                        Lastname = b.Passenger.Lastname,
+                        SalesPrice = b.SalesPrice
+                    };
+                     bdmList.Add(bdm);
                 }
 
             }
-            return tickets;
+            return bdmList;
         }
 
-        // PUT: api/ToDoItems/5
+        //c. Buying a ticket on a flight
+        // PUT: api/flight/1
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -177,7 +209,7 @@ namespace IntroductionAPIComposant.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ToDoItemExists(id))
+                if (!FlightExists(id))
                 {
                     return NotFound();
                 }
@@ -190,7 +222,7 @@ namespace IntroductionAPIComposant.Controllers
             return NoContent();
         }
 
-        // POST: api/ToDoItems
+        // POST: api/flight
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -202,7 +234,7 @@ namespace IntroductionAPIComposant.Controllers
             return CreatedAtAction("GetFlight", new { id = flight.FlightNo }, flight);
         }
 
-        // DELETE: api/ToDoItems/5
+        // DELETE: api/flight/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Flight>> DeleteFlight(long id)
         {
@@ -218,7 +250,8 @@ namespace IntroductionAPIComposant.Controllers
             return flight;
         }
 
-        private bool ToDoItemExists(long id)
+        // Method to check if a flight exists
+        private bool FlightExists(int id)
         {
             return _context.FlightSet.Any(e => e.FlightNo == id);
         }
