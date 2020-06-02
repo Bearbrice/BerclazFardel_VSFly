@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using WebAppAPIClient.Factory;
+using System.Diagnostics;
 using WebAppAPIClient.Models;
 using WebAppAPIClient.Utility;
 
@@ -22,12 +17,6 @@ namespace WebAppAPIClient.Controllers
             appSettings = app;
             ApplicationSettings.WebApiUrl = appSettings.Value.WebApiBaseUrl;
             _logger = logger;
-        }
-
-        public async Task<IActionResult> IndexAsync()
-        {
-            var data = await ApiClientFactory.Instance.GetTodoItems();
-            return View(data);
         }
 
         public IActionResult About()

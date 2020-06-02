@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,15 +86,5 @@ namespace WebAppAPIClient
             var data = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Message<T>>(data);
         }
-
-        /* ---------------- DEV --------------------------------------*/
-
-        //private async Task<T> GetAsync<T>(Uri requestUrl)
-        //{
-        //    var response = await _httpClient.GetAsync(requestUrl, HttpCompletionOption.ResponseHeadersRead);
-        //    response.EnsureSuccessStatusCode();
-        //    var data = await response.Content.ReadAsStringAsync();
-        //    return JsonConvert.DeserializeObject<T>(data);
-        //}
     }
 }

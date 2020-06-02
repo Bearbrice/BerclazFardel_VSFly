@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using DTO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using DTO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using WebAppAPIClient.Factory;
 using WebAppAPIClient.Models;
 using WebAppAPIClient.Models.Decorator;
@@ -83,7 +81,7 @@ namespace WebAppAPIClient.Controllers
 
             //FlightBooking fb = new FlightBooking();
             //fb.Flight = flight;
-            
+
             return View(flight);
         }
 
@@ -118,7 +116,7 @@ namespace WebAppAPIClient.Controllers
         // POST: Default/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice,bool popcorn, bool film, bool mojito)
+        public async Task<ActionResult> Details(int flightNo, string firstname, string lastname, float basePrice, bool popcorn, bool film, bool mojito)
         {
             /* --- PASSENGER MNGMT --- */
             /*Check if passenger exist*/
@@ -133,7 +131,7 @@ namespace WebAppAPIClient.Controllers
                 //Console.WriteLine("No passenger found." + e.Message);
 
                 TempData["error"] = "noAccount";
-                
+
                 return RedirectToAction("Details", new { id = flightNo });
             }
 
@@ -175,7 +173,7 @@ namespace WebAppAPIClient.Controllers
 
             String _description = f.GetDescription();
 
-            return RedirectToAction("BookingDetails", new { id=flightNo, firstname, lastname, price=basePrice, description=_description });
+            return RedirectToAction("BookingDetails", new { id = flightNo, firstname, lastname, price = basePrice, description = _description });
         }
 
         //public async Task<IActionResult> IndexAsync()
