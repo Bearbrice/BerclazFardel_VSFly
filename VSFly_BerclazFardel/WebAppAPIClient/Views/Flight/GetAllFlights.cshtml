@@ -126,7 +126,11 @@
                 @if (fillRate >= 80)
                 {
                     color = "red";
+                }
 
+                @if (fillRate < 50)
+                {
+                    color = "green";
                 }
 
                 <span style="color:@color;">
@@ -136,7 +140,7 @@
 
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BasePrice)
+                @Html.DisplayFor(modelItem => item.BasePrice) CHF
             </td>
 
             <td>

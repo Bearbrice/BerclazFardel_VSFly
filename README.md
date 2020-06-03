@@ -6,6 +6,8 @@
 
 This project was carried out as part of the "634-1 - Components and patterns" module for both pattern and component courses.
 
+We created an API linked to a database using EF Core. The MVC client can then send HTTP requests such as GET, POST or PUT in this project. The client is able to propose a web application so that the end user is able to perform concrete actions on the application. The data is sent to the server and stored in a local database.
+
 ## Installation
 
 Just unzip the compressed file (.zip) and open the two solutions files (.sln) in two distinct Visual Studio.
@@ -27,6 +29,10 @@ Set the correct value for the attribute ConnectionString in the class *VsFlightC
 ## Usage
 
 You can directly launch it from Visual Studio. First run the API part (API solution) via IIS Express and then the client WebApplication (other solution) in IIS Express as well.
+
+## Patterns documentation
+
+We wrote documentation for the patterns we used in this project. It is available on this repository in the pdf file named *BerclazFardel_VSFly_Patterns_VF.pdf*.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/) :octocat:
